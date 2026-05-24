@@ -41,6 +41,100 @@
       margin-top: 8px;
     }
 
+    .pricing-section {
+      width: 100%;
+      max-width: 840px;
+      padding: 0 24px 48px;
+    }
+
+    .pricing-section h2 {
+      color: #8B5CF6;
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .pricing-card {
+      background: #16161a;
+      border: 1px solid #2a2a32;
+      border-radius: 12px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: border-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .pricing-card:hover {
+      border-color: #8B5CF6;
+      transform: translateY(-4px);
+    }
+
+    .pricing-card .tier-name {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #d4d4d8;
+      margin-bottom: 8px;
+    }
+
+    .pricing-card .tier-price {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #8B5CF6;
+      margin-bottom: 16px;
+    }
+
+    .pricing-card .tier-price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #a1a1aa;
+    }
+
+    .pricing-card .tier-cta {
+      display: inline-block;
+      background: #8B5CF6;
+      color: white;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+
+    .pricing-card .tier-cta:hover {
+      background: #7c3aed;
+    }
+
+    .pricing-card .tier-cta:active {
+      transform: scale(0.97);
+    }
+
+    .pricing-card.vip {
+      border-color: #8B5CF6;
+      position: relative;
+    }
+
+    .pricing-card.vip::before {
+      content: 'VIP';
+      position: absolute;
+      top: -1px;
+      right: 16px;
+      background: #8B5CF6;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 0 0 8px 8px;
+    }
+
     .contact-section {
       width: 100%;
       max-width: 560px;
@@ -142,6 +236,8 @@
     @media (max-width: 480px) {
       h1 { font-size: 1.75rem; }
       form { padding: 24px; }
+      .pricing-card { padding: 24px 16px; }
+      .pricing-card .tier-price { font-size: 1.75rem; }
     }
   </style>
 </head>
@@ -150,6 +246,27 @@
     <h1>Velo Mistico</h1>
     <p class="subtitle">App caricata con successo!</p>
   </header>
+
+  <section class="pricing-section">
+    <h2>Consulto</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <p class="tier-name">Base</p>
+        <p class="tier-price">€3<span>/consulto</span></p>
+        <a class="tier-cta" href="mailto:volanimastudio@gmail.com?subject=Consulto%20Base%20%E2%82%AC3">Richiedi</a>
+      </div>
+      <div class="pricing-card">
+        <p class="tier-name">Standard</p>
+        <p class="tier-price">€7<span>/consulto</span></p>
+        <a class="tier-cta" href="mailto:volanimastudio@gmail.com?subject=Consulto%20Standard%20%E2%82%AC7">Richiedi</a>
+      </div>
+      <div class="pricing-card vip">
+        <p class="tier-name">VIP</p>
+        <p class="tier-price">€15<span>/consulto</span></p>
+        <a class="tier-cta" href="mailto:volanimastudio@gmail.com?subject=Consulto%20VIP%20%E2%82%AC15">Richiedi</a>
+      </div>
+    </div>
+  </section>
 
   <section class="contact-section">
     <h2>Contattaci</h2>
